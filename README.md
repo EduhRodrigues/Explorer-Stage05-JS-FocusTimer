@@ -1,4 +1,4 @@
-Check my work on <a href="https://github.com/EduhRodrigues/Explorer-Stage05-JS-FocusTimer.git"
+Check my work on <a href="https://eduhrodrigues.github.io/Explorer-Stage05-JS-FocusTimer/"
 ">github.io/Explorer-Stage05-JS-FocusTimer</a> <br> <br>
 
 A ideia agora é criar o FocusTimer 2.0! <br>
