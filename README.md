@@ -1,5 +1,4 @@
-Check my work on <a href="https://eduhrodrigues.github.io/Explorer-Stage05-JS-FocusTimer/"
-">github.io/Explorer-Stage05-JS-FocusTimer</a> <br> <br>
+Check my work on <a href="https://eduhrodrigues.github.io/Explorer-Stage05-JS-FocusTimer/">github.io/Explorer-Stage05-JS-FocusTimer</a> <br> <br>
 
 A ideia agora é criar o FocusTimer 2.0! <br>
 Você receberá um link com o layout dessa nova versão, como você pode ver na imagem: <br> <br>
