@@ -1,6 +1,63 @@
-setTimeout(() => {
-  document.getElementsById('floresta').play();
-}, 500)
+var forestAudio = document.getElementById("forestAudio")
+var forestDiv = document.getElementById("forestDiv")
+var countForestAudio = 0
+
+function playPauseforestAudio (){
+  if (countForestAudio == 0) {
+    countForestAudio = 1
+    forestAudio.play()
+  } else {
+    countForestAudio =0
+    forestAudio.pause()
+  }
+}
+
+/*function stopForestAudio() {
+  function playPauseforestAudio ()
+  forestAudio.pause()
+  
+}*/
+
+var rainAudio = document.getElementById("rainAudio")
+var rainDiv = document.getElementById("rainDiv")
+var countRainAudio = 0
+function playPauserainAudio (){
+  if (countRainAudio == 0) {
+    countRainAudio = 1
+    rainAudio.play()
+  } else {
+    countRainAudio = 0
+    rainAudio.pause()
+  }
+}
+
+var coffeeShopAudio = document.getElementById("coffeeShopAudio")
+var coffeeShopDiv = document.getElementById("coffeeShopDiv")
+var countCoffeeShopAudio = 0
+
+function playPauseCoffeeShopAudio (){
+  if (countCoffeeShopAudio == 0) {
+    countCoffeeShopAudio = 1
+    coffeeShopAudio.play()
+  } else {
+    countCoffeeShopAudio = 0
+    coffeeShopAudio.pause()
+  }
+}
+
+var firePlaceAudio = document.getElementById("firePlaceAudio")
+var firePlaceDiv = document.getElementById("firePlaceDiv")
+var countFirePlaceAudio = 0
+
+function playPauseFirePlaceAudio (){
+  if (countFirePlaceAudio == 0) {
+    countFirePlaceAudio = 1
+    firePlaceAudio.play()
+  } else {
+    countFirePlaceAudio = 0
+    firePlaceAudio.pause()
+  }
+}
 
 
 
@@ -42,6 +99,8 @@ function mouseOutForestSVG() {
 function clickForestSVG() {
   document.getElementById("forest-svg").style.transform = "scale(1.1)"
   document.getElementById("forest-svg").style.transition =".2s"
+
+  
 }
 
 // Sound Option - Rain //
