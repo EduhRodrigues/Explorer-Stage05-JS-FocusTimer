@@ -1,3 +1,10 @@
+document.getElementById("teste").style.fill= "hsla(240, 6%, 21%, 1)"
+
+ // Fill //
+document.getElementById("teste").addEventListener("mouseover", mouseOverForestSVG);
+document.getElementById("teste").addEventListener("mouseout", mouseOutForestSVG);
+
+
 // Forest //
 document.getElementById("forest-svg").addEventListener("mouseover", mouseOverForestSVG);
 document.getElementById("forest-svg").addEventListener("mouseout", mouseOutForestSVG);
@@ -5,10 +12,12 @@ document.getElementById("forest-svg").addEventListener("mouseout", mouseOutFores
 
 function mouseOverForestSVG() {
   document.getElementById("forest-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)";
+  document.getElementById("teste").style.fill= "hsl(0,0%,100%)"
 }
 
 function mouseOutForestSVG() {
   document.getElementById("forest-svg").style.backgroundColor = "hsl(240,9.1%,89.2%)";
+  document.getElementById("teste").style.fill= "hsla(240, 6%, 21%, 1)"
 }
 
 // Rain //

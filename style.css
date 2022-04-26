@@ -53,7 +53,7 @@ main {
 button {
   border: none;
   cursor: pointer;
-  background-color: white;
+  background-color: transparent;
 }
 
 #controls {
@@ -61,8 +61,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
+} 
 #controls svg path {
   fill: var(--primary-icons-color);
   background-color: var(--primary-bg-icons-color);
@@ -94,14 +93,19 @@ button {
   cursor: pointer;
   border-radius: 3rem;
 }
+/* This event is now in the script.js
+#soundSelector svg path {
+  fill: var(--primary-icons-color);
+}
 
-/*#soundSelector svg:hover {
+ 
+#soundSelector svg:hover {
   background-color: var( --secondary-bg-icons-color);
-}*/
+}
 
 #soundSelector svg path:hover {
   fill: var(--secondary-icons-color)
-}
+}*/
 
 
 @media (max-width: 700px) {
