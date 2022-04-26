@@ -1,3 +1,9 @@
+setTimeout(() => {
+  document.getElementsById('floresta').play();
+}, 500)
+
+
+
 // Sound Options //
 document.getElementById("forestPath").style.fill= "hsla(240, 6%, 21%, 1)"
 document.getElementById("rainPath").style.fill= "hsla(240, 6%, 21%, 1)"
