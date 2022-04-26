@@ -97,10 +97,6 @@ button {
 
 #soundSelector svg:hover {
   background-color: var( --secondary-bg-icons-color);
-  }
-
-#soundSelector svg path {
-  fill: var(--primary-icons-color);
 }
 
 #soundSelector svg path:hover {
@@ -115,16 +111,14 @@ button {
     height: 33.6rem;
     align-items: center;
     justify-content: space-evenly;
-   } 
-
+  } 
    #soundSelector {
      margin-top: 2rem;
-   }
-
+  }
    body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-}
+   }
   }
