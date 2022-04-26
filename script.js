@@ -12,41 +12,60 @@ document.getElementById("backPath").style.fill= "hsla(240, 6%, 21%, 1)"
 
 // Sound Option - Forest //
 document.getElementById("forest-svg").addEventListener("mouseover", mouseOverForestSVG)
-document.getElementById("forest-svg").addEventListener("mouseout", mouseOutForestSVG)
 document.getElementById("forestPath").addEventListener("mouseover", mouseOverForestSVG)
+
 document.getElementById("forestPath").addEventListener("mouseout", mouseOutForestSVG)
+document.getElementById("forest-svg").addEventListener("mouseout", mouseOutForestSVG)
+
+document.getElementById("forestPath").addEventListener("click", clickForestSVG)
+document.getElementById("forest-svg").addEventListener("click", clickForestSVG)
 
 function mouseOverForestSVG() {
-  document.getElementById("forest-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
-  document.getElementById("forest-svg").transition ="6s"
-
-  document.getElementById("forest-svg").style.transform= "scale(1.1)";
   document.getElementById("forestPath").style.fill= "hsl(0,0%,100%)"
+  document.getElementById("forest-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
+  document.getElementById("forest-svg").style.transition =".4s"
 }
 
 function mouseOutForestSVG() {
+  document.getElementById("forestPath").style.fill= "hsla(240, 6%, 21%, 1)"
   document.getElementById("forest-svg").style.backgroundColor = "hsl(240,9.1%,89.2%)"
   document.getElementById("forest-svg").style.transform = "scale(1)"
-  document.getElementById("forestPath").style.fill= "hsla(240, 6%, 21%, 1)"
+  document.getElementById("forest-svg").style.transition =".4s"
+}
+
+function clickForestSVG() {
+  document.getElementById("forest-svg").style.transform = "scale(1.1)"
+  document.getElementById("forest-svg").style.transition =".2s"
 }
 
 // Sound Option - Rain //
 document.getElementById("rain-svg").addEventListener("mouseover", mouseOverRainSVG)
 document.getElementById("rainPath").addEventListener("mouseover", mouseOverRainSVG)
+
 document.getElementById("rain-svg").addEventListener("mouseout", mouseOutRainSVG)
 document.getElementById("rainPath").addEventListener("mouseout", mouseOutRainSVG)
 
+document.getElementById("rainPath").addEventListener("click", clickRainSVG)
+document.getElementById("rain-svg").addEventListener("click", clickRainSVG)
 
 function mouseOverRainSVG() {
-  document.getElementById("rain-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
-  document.getElementById("rain-svg").style.transform = "scale(1.1)"
   document.getElementById("rainPath").style.fill= "hsl(0,0%,100%)"
+
+  document.getElementById("rain-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
+  document.getElementById("rain-svg").style.transition =".4s"
 }
 
 function mouseOutRainSVG() {
+  document.getElementById("rainPath").style.fill= "hsla(240, 6%, 21%, 1)"
+
   document.getElementById("rain-svg").style.backgroundColor = "hsl(240,9.1%,89.2%)"
   document.getElementById("rain-svg").style.transform ="scale(1)"
-  document.getElementById("rainPath").style.fill= "hsla(240, 6%, 21%, 1)"
+  document.getElementById("rain-svg").style.transition =".4s"
+}
+
+function clickRainSVG() {
+  document.getElementById("rain-svg").style.transform = "scale(1.1)"
+  document.getElementById("rain-svg").style.transition =".2s"
 }
 
 // Sound Option - Coffee Shop //
@@ -56,34 +75,53 @@ document.getElementById("coffeeShopPath").addEventListener("mouseover", mouseOve
 document.getElementById("coffeeShop-svg").addEventListener("mouseout", mouseOutCoffeeShopSVG)
 document.getElementById("coffeeShopPath").addEventListener("mouseout", mouseOutCoffeeShopSVG)
 
+document.getElementById("coffeeShopPath").addEventListener("click", clickCoffeeShopSVG)
+document.getElementById("coffeeShop-svg").addEventListener("click", clickCoffeeShopSVG)
+
 function mouseOverCoffeeShopSVG() {
-  document.getElementById("coffeeShop-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
-  document.getElementById("coffeeShop-svg").style.transform = "scale(1.1)"
   document.getElementById("coffeeShopPath").style.fill= "hsl(0,0%,100%)"
+  document.getElementById("coffeeShop-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
+  document.getElementById("coffeeShop-svg").style.transition =".4s"
 }
 
 function mouseOutCoffeeShopSVG() {
+  document.getElementById("coffeeShopPath").style.fill= "hsla(240, 6%, 21%, 1)"
   document.getElementById("coffeeShop-svg").style.backgroundColor = "hsl(240,9.1%,89.2%)"
   document.getElementById("coffeeShop-svg").style.transform = "scale(1)"
-  document.getElementById("coffeeShopPath").style.fill= "hsla(240, 6%, 21%, 1)"
+  document.getElementById("coffeeShop-svg").style.transition =".4s"
+}
+
+function clickCoffeeShopSVG() {
+  document.getElementById("coffeeShop-svg").style.transform = "scale(1.1)"
+  document.getElementById("coffeeShop-svg").style.transition =".2s"
 }
 
 // Sound Option - FirePlace //
 document.getElementById("firePlace-svg").addEventListener("mouseover", mouseOverFirePlaceSVG)
 document.getElementById("firePlacePath").addEventListener("mouseover", mouseOverFirePlaceSVG)
+
 document.getElementById("firePlace-svg").addEventListener("mouseout", mouseOutFirePlaceSVG)
 document.getElementById("firePlacePath").addEventListener("mouseout", mouseOutFirePlaceSVG)
 
+document.getElementById("firePlacePath").addEventListener("click", clickFirePlaceSVG)
+document.getElementById("firePlace-svg").addEventListener("click", clickFirePlaceSVG)
+
 function mouseOverFirePlaceSVG() {
-  document.getElementById("firePlace-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
-  document.getElementById("firePlace-svg").style.transform = "scale(1.1)"
   document.getElementById("firePlacePath").style.fill= "hsl(0,0%,100%)"
+  document.getElementById("firePlace-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
+  document.getElementById("firePlace-svg").style.transition =".4s"
 }
 
 function mouseOutFirePlaceSVG() {
+  document.getElementById("firePlacePath").style.fill= "hsla(240, 6%, 21%, 1)"
   document.getElementById("firePlace-svg").style.backgroundColor = "hsl(240,9.1%,89.2%)"
   document.getElementById("firePlace-svg").style.transform = "scale(1)"
-  document.getElementById("firePlacePath").style.fill= "hsla(240, 6%, 21%, 1)"
+  document.getElementById("firePlace-svg").style.transition =".4s"
+}
+
+function clickFirePlaceSVG() {
+  document.getElementById("firePlace-svg").style.transform = "scale(1.1)"
+  document.getElementById("firePlace-svg").style.transition =".2s"
 }
 
 // Controller - Play //
