@@ -13,12 +13,13 @@ document.getElementById("backPath").style.fill= "hsla(240, 6%, 21%, 1)"
 // Sound Option - Forest //
 document.getElementById("forest-svg").addEventListener("mouseover", mouseOverForestSVG)
 document.getElementById("forest-svg").addEventListener("mouseout", mouseOutForestSVG)
-
 document.getElementById("forestPath").addEventListener("mouseover", mouseOverForestSVG)
 document.getElementById("forestPath").addEventListener("mouseout", mouseOutForestSVG)
 
 function mouseOverForestSVG() {
   document.getElementById("forest-svg").style.backgroundColor= "hsl(193.9,97.5%,31.2%)"
+  document.getElementById("forest-svg").transition ="6s"
+
   document.getElementById("forest-svg").style.transform= "scale(1.1)";
   document.getElementById("forestPath").style.fill= "hsl(0,0%,100%)"
 }
