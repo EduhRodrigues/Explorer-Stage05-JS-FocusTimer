@@ -95,9 +95,9 @@ button {
   border-radius: 3rem;
 }
 
-#soundSelector svg:hover {
+/*#soundSelector svg:hover {
   background-color: var( --secondary-bg-icons-color);
-}
+}*/
 
 #soundSelector svg path:hover {
   fill: var(--secondary-icons-color)
