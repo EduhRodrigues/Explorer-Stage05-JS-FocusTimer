@@ -1,3 +1,14 @@
+// #timer Set //
+
+const minutesDisplay = document.getElementById("min")
+const secondsDisplay= document.getElementById("sec")
+
+minutesDisplay.textContent = 21
+secondsDisplay.textContent = 12
+
+
+
+// Play/Pause Forest Audio Control //
 var forestAudio = document.getElementById("forestAudio")
 var forestDiv = document.getElementById("forestDiv")
 var countForestAudio = 0
@@ -7,11 +18,12 @@ function playPauseforestAudio (){
     countForestAudio = 1
     forestAudio.play()
   } else {
-    countForestAudio =0
+    countForestAudio = 0
     forestAudio.pause()
   }
 }
 
+// Play/Pause Rain Audio Control //
 var rainAudio = document.getElementById("rainAudio")
 var rainDiv = document.getElementById("rainDiv")
 var countRainAudio = 0
@@ -25,6 +37,7 @@ function playPauserainAudio (){
   }
 }
 
+// Play/Pause Coffee Shop Audio Control //
 var coffeeShopAudio = document.getElementById("coffeeShopAudio")
 var coffeeShopDiv = document.getElementById("coffeeShopDiv")
 var countCoffeeShopAudio = 0
@@ -39,6 +52,7 @@ function playPauseCoffeeShopAudio (){
   }
 }
 
+// Play/Pause Fire Place Audio Control //
 var firePlaceAudio = document.getElementById("firePlaceAudio")
 var firePlaceDiv = document.getElementById("firePlaceDiv")
 var countFirePlaceAudio = 0
@@ -53,7 +67,13 @@ function playPauseFirePlaceAudio (){
   }
 }
 
-// Sound Options //
+// #controls Fill Colors//
+document.getElementById("playPath").style.fill= "#993399"
+document.getElementById("pausePath").style.fill= "#993399"
+document.getElementById("forwardPath").style.fill= "#993399"
+document.getElementById("backPath").style.fill= "#993399"
+
+// Sound Options Background and Fill Colors//
 document.getElementById("forestPath").style.fill= "green"
 document.getElementById("forest-svg").style.backgroundColor = "#7CFC00"
 document.getElementById("rainPath").style.fill= "grey"
@@ -62,12 +82,6 @@ document.getElementById("coffeeShopPath").style.fill= "#523200"
 document.getElementById("coffeeShop-svg").style.backgroundColor = "#9e6100"
 document.getElementById("firePlacePath").style.fill= "#a60505"
 document.getElementById("firePlace-svg").style.backgroundColor = "#ff0808"
-
-// Controlls //
-document.getElementById("playPath").style.fill= "#993399"
-document.getElementById("pausePath").style.fill= "#993399"
-document.getElementById("forwardPath").style.fill= "#993399"
-document.getElementById("backPath").style.fill= "#993399"
 
 // Sound Option - Forest //
 document.getElementById("forest-svg").addEventListener("mouseover", mouseOverForestSVG)
@@ -161,7 +175,7 @@ function mouseOverCoffeeShopSVG() {
 
 function mouseOutCoffeeShopSVG() {
   document.getElementById("coffeeShopPath").style.fill= "#523200"
-document.getElementById("coffeeShop-svg").style.backgroundColor = "#9e6100"
+  document.getElementById("coffeeShop-svg").style.backgroundColor = "#9e6100"
   document.getElementById("coffeeShop-svg").style.transform = "scale(1)"
   document.getElementById("coffeeShop-svg").style.transition =".4s"
 }
