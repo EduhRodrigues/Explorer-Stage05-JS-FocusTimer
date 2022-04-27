@@ -244,11 +244,14 @@ document.getElementById("pause-svg").addEventListener("click", mouseClickPauseSV
 function timerCountUp() {
   setTimeout (function () {
     let second = Number (secondsDisplay.textContent)
+    let minut = Number (minutesDisplay.textContent)
 
     if (second >= 59) {
       secondsDisplay.textContent = -1
-      minutesDisplay.textContent = ++minutesDisplay.textContent
+      minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
+      timerCountUp()
     }
+    
     secondsDisplay.textContent =  String (++secondsDisplay.textContent).padStart(2, "0")
     timerCountUp()
   }, 1000)
@@ -259,8 +262,8 @@ function mouseClickPlaySVG() {
 }
 
 function mouseClickPauseSVG() {
-  minutesDisplay.textContent = 0
-  secondsDisplay.textContent = 0
+  minutesDisplay.textContent = '00'
+  secondsDisplay.textContent = '00'
 }
 
 function mouseClickForwardSVG() {
