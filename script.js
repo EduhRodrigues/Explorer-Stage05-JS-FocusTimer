@@ -95,6 +95,15 @@ function mouseOutForestSVG() {
 function clickForestSVG() {
   document.getElementById("forest-svg").style.transform = "scale(1.1)"
   document.getElementById("forest-svg").style.transition =".2s"
+
+  var ShowFirePlaceAudioControls = document.getElementById('firePlaceAudio');
+  firePlaceAudio.controls = false;
+  var ShowCoffeeShopAudioControls = document.getElementById('coffeeShopAudio');
+  coffeeShopAudio.controls = false;
+  var ShowRainAudioControls = document.getElementById('rainAudio');
+  rainAudio.controls = false;
+  var ShowForestAudioControls = document.getElementById('forestAudio');
+  forestAudio.controls = true;
 }
 
 // Sound Option - Rain //
@@ -123,6 +132,15 @@ function mouseOutRainSVG() {
 function clickRainSVG() {
   document.getElementById("rain-svg").style.transform = "scale(1.1)"
   document.getElementById("rain-svg").style.transition =".2s"
+
+  var ShowForestAudioControls = document.getElementById('forestAudio');
+  forestAudio.controls = false;
+  var ShowFirePlaceAudioControls = document.getElementById('firePlaceAudio');
+  firePlaceAudio.controls = false;
+  var ShowCoffeeShopAudioControls = document.getElementById('coffeeShopAudio');
+  coffeeShopAudio.controls = false;
+  var ShowRainAudioControls = document.getElementById('rainAudio');
+  rainAudio.controls = true;
 }
 
 // Sound Option - Coffee Shop //
@@ -151,6 +169,15 @@ document.getElementById("coffeeShop-svg").style.backgroundColor = "#9e6100"
 function clickCoffeeShopSVG() {
   document.getElementById("coffeeShop-svg").style.transform = "scale(1.1)"
   document.getElementById("coffeeShop-svg").style.transition =".2s"
+
+  var ShowForestAudioControls = document.getElementById('forestAudio');
+  forestAudio.controls = false;
+  var ShowRainAudioControls = document.getElementById('rainAudio');
+  rainAudio.controls = false;
+  var ShowFirePlaceAudioControls = document.getElementById('firePlaceAudio');
+  firePlaceAudio.controls = false;
+  var ShowCoffeeShopAudioControls = document.getElementById('coffeeShopAudio');
+  coffeeShopAudio.controls = true;
 }
 
 // Sound Option - FirePlace //
@@ -179,6 +206,15 @@ function mouseOutFirePlaceSVG() {
 function clickFirePlaceSVG() {
   document.getElementById("firePlace-svg").style.transform = "scale(1.1)"
   document.getElementById("firePlace-svg").style.transition =".2s"
+
+  var ShowForestAudioControls = document.getElementById('forestAudio');
+  forestAudio.controls = false;
+  var ShowRainAudioControls = document.getElementById('rainAudio');
+  rainAudio.controls = false;
+  var ShowCoffeeShopAudioControls = document.getElementById('coffeeShopAudio');
+  coffeeShopAudio.controls = false;
+  var ShowFirePlaceAudioControls = document.getElementById('firePlaceAudio');
+  firePlaceAudio.controls = true;
 }
 
 // Controller - Play //
