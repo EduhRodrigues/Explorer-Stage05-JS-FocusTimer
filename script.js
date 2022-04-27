@@ -226,8 +226,8 @@ function clickFirePlaceSVG() {
 const minutesDisplay = document.getElementById("min")
 const secondsDisplay= document.getElementById("sec")
 
-minutesDisplay.textContent = 0
-secondsDisplay.textContent = 0
+minutesDisplay.textContent = '00'
+secondsDisplay.textContent = '00'
 
 // Controller - Play //
 document.getElementById("play-svg").addEventListener("mouseover", mouseOverPlaySVG)
@@ -245,14 +245,11 @@ function timerCountUp() {
   setTimeout (function () {
     let second = Number (secondsDisplay.textContent)
 
-    if (second <= 60) {
-      second = 60
+    if (second >= 59) {
+      secondsDisplay.textContent = -1
     }
-
-    secondsDisplay.textContent =  Number (secondsDisplay.textContent) +1
-
+    secondsDisplay.textContent =  String (++secondsDisplay.textContent).padStart(2, "0")
     timerCountUp()
-
   }, 1000)
 
 }
