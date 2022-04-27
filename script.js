@@ -247,6 +247,7 @@ function timerCountUp() {
 
     if (second >= 59) {
       secondsDisplay.textContent = -1
+      minutesDisplay.textContent = ++minutesDisplay.textContent
     }
     secondsDisplay.textContent =  String (++secondsDisplay.textContent).padStart(2, "0")
     timerCountUp()
@@ -263,14 +264,14 @@ function mouseClickPauseSVG() {
 }
 
 function mouseClickForwardSVG() {
-  minutesDisplay.textContent = Number (minutesDisplay.textContent) +1
+  minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
 }
 
 function mouseClickBackSVG() {
-  minutesDisplay.textContent = Number (minutesDisplay.textContent) -1
+  minutesDisplay.textContent = String (--minutesDisplay.textContent).padStart(2, "0")
 
   if (minutesDisplay.textContent <=-1){
-    minutesDisplay.textContent = 0
+    minutesDisplay.textContent = "00"
   }
 }
 
