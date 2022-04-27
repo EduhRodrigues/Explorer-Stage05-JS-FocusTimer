@@ -222,7 +222,6 @@ function clickFirePlaceSVG() {
 }
 
 // #timer Set //
-
 const minutesDisplay = document.getElementById("min")
 const secondsDisplay= document.getElementById("sec")
 
@@ -249,7 +248,6 @@ function timerCountUp() {
     if (second >= 59) {
       secondsDisplay.textContent = -1
       minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
-      timerCountUp()
     }
     
     secondsDisplay.textContent =  String (++secondsDisplay.textContent).padStart(2, "0")
@@ -262,8 +260,8 @@ function mouseClickPlaySVG() {
 }
 
 function mouseClickPauseSVG() {
-  minutesDisplay.textContent = '00'
-  secondsDisplay.textContent = '00'
+  minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
+  secondsDisplay.textContent = String (++secondsDisplay.textContent).padStart(2, "0")
 }
 
 function mouseClickForwardSVG() {
