@@ -226,10 +226,10 @@ function clickFirePlaceSVG() {
 const minutesDisplay = document.getElementById("min")
 const secondsDisplay= document.getElementById("sec")
 
-minutesDisplay.textContent = '00'
-secondsDisplay.textContent = '00'
-var a = 00
-var b = 00
+minutesDisplay.textContent = 0
+secondsDisplay.textContent = 0
+var a = 0
+var b = 0
 
 // Controller - Play //
 document.getElementById("play-svg").addEventListener("mouseover", mouseOverPlaySVG)
@@ -238,16 +238,14 @@ document.getElementById("play-svg").addEventListener("mouseout", mouseOutPlaySVG
 document.getElementById("playPath").addEventListener("mouseover", mouseOverPlaySVG)
 document.getElementById("playPath").addEventListener("mouseout", mouseOutPlaySVG)
 
-document.getElementById("forward-svg").addEventListener("click", mouseClickPlaySVG)
-document.getElementById("forwardPath").addEventListener("click", mouseClickPlaySVG)
+document.getElementById("forward-svg").addEventListener("click", mouseClickForwardSVG)
 
 document.getElementById("back-svg").addEventListener("click", mouseClickBackSVG)
-document.getElementById("backPath").addEventListener("click", mouseClickBackSVG)
 
 document.getElementById("pause-svg").addEventListener("click", mouseClickPauseSVG)
-document.getElementById("pausePath").addEventListener("click", mouseClickPauseSVG)
 
-function mouseClickPlaySVG() {
+
+function mouseClickForwardSVG() {
   secondsDisplay.textContent = ++b
 }
 
@@ -256,8 +254,8 @@ function mouseClickBackSVG() {
 }
 
 function mouseClickPauseSVG() {
-  a = '00'
-  b = '00'
+  a = 0
+  b = 0
   minutesDisplay.textContent = a
   secondsDisplay.textContent = b
 }
