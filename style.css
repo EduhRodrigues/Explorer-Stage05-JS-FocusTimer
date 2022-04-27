@@ -64,8 +64,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-} 
+  margin-bottom: 5rem;
+}
 /*#controls svg path {
   fill: var(--primary-icons-color);
   background-color: var(--primary-bg-icons-color);
@@ -108,7 +108,7 @@ button {
   transform: scale(1.1);
 }*/
 
-@media (max-width: 700px) {
+@media (max-width: 815px) {
   main {
     display: block;
     width: 32rem;
@@ -119,10 +119,13 @@ button {
    #soundSelector {
      margin-top: 2rem;
   }
-   body {
+  body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-   }
-  }
+    margin-top: -7rem;
+}
+   #timer {
+     font-size: 11.6rem;
+  }}
