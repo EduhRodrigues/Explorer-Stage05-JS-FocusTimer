@@ -1,13 +1,3 @@
-// #timer Set //
-
-const minutesDisplay = document.getElementById("min")
-const secondsDisplay= document.getElementById("sec")
-
-minutesDisplay.textContent = 21
-secondsDisplay.textContent = 12
-
-
-
 // Play/Pause Forest Audio Control //
 var forestAudio = document.getElementById("forestAudio")
 var forestDiv = document.getElementById("forestDiv")
@@ -231,12 +221,46 @@ function clickFirePlaceSVG() {
   firePlaceAudio.controls = true;
 }
 
+// #timer Set //
+
+const minutesDisplay = document.getElementById("min")
+const secondsDisplay= document.getElementById("sec")
+
+minutesDisplay.textContent = '00'
+secondsDisplay.textContent = '00'
+var a = 00
+var b = 00
+
 // Controller - Play //
 document.getElementById("play-svg").addEventListener("mouseover", mouseOverPlaySVG)
 document.getElementById("play-svg").addEventListener("mouseout", mouseOutPlaySVG)
 
 document.getElementById("playPath").addEventListener("mouseover", mouseOverPlaySVG)
 document.getElementById("playPath").addEventListener("mouseout", mouseOutPlaySVG)
+
+document.getElementById("forward-svg").addEventListener("click", mouseClickPlaySVG)
+document.getElementById("forwardPath").addEventListener("click", mouseClickPlaySVG)
+
+document.getElementById("back-svg").addEventListener("click", mouseClickBackSVG)
+document.getElementById("backPath").addEventListener("click", mouseClickBackSVG)
+
+document.getElementById("pause-svg").addEventListener("click", mouseClickPauseSVG)
+document.getElementById("pausePath").addEventListener("click", mouseClickPauseSVG)
+
+function mouseClickPlaySVG() {
+  secondsDisplay.textContent = ++b
+}
+
+function mouseClickBackSVG() {
+  secondsDisplay.textContent = --b
+}
+
+function mouseClickPauseSVG() {
+  a = '00'
+  b = '00'
+  minutesDisplay.textContent = a
+  secondsDisplay.textContent = b
+}
 
 function mouseOverPlaySVG() {
   document.getElementById("play-svg").style.fill= "#7CFC00"
