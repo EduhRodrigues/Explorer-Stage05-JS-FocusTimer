@@ -240,8 +240,9 @@ document.getElementById("forward-svg").addEventListener("click", mouseClickForwa
 document.getElementById("back-svg").addEventListener("click", mouseClickBackSVG)
 document.getElementById("pause-svg").addEventListener("click", mouseClickPauseSVG)
 
+let pauseTimerCountUp
 function timerCountUp() {
-  setTimeout (function () {
+  pauseTimerCountUp = setTimeout (function () {
     let second = Number (secondsDisplay.textContent)
     let minut = Number (minutesDisplay.textContent)
 
@@ -256,7 +257,7 @@ function timerCountUp() {
     }
     
     secondsDisplay.textContent =  String (++secondsDisplay.textContent).padStart(2, "0")
-
+   
     timerCountUp()
     
   }, 1000)
@@ -265,8 +266,7 @@ function timerCountUp() {
 function mouseClickPauseSVG() {
   minutesDisplay.textContent = String (minutesDisplay.textContent).padStart(2, "0")
   secondsDisplay.textContent = String (secondsDisplay.textContent).padStart(2, "0")
-  setTimeout()
-  return
+  clearTimeout(pauseTimerCountUp)
 }
 
 function mouseClickPlaySVG() {
