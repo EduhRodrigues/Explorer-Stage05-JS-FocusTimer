@@ -4,6 +4,10 @@ var forestDiv = document.getElementById("forestDiv")
 var countForestAudio = 0
 
 function playPauseforestAudio (){
+  rainAudio.pause()
+  coffeeShopAudio.pause()
+  firePlaceAudio.pause()
+
   if (countForestAudio == 0) {
     countForestAudio = 1
     forestAudio.play()
@@ -18,6 +22,10 @@ var rainAudio = document.getElementById("rainAudio")
 var rainDiv = document.getElementById("rainDiv")
 var countRainAudio = 0
 function playPauserainAudio (){
+  forestAudio.pause()
+  coffeeShopAudio.pause()
+  firePlaceAudio.pause()
+
   if (countRainAudio == 0) {
     countRainAudio = 1
     rainAudio.play()
@@ -33,6 +41,10 @@ var coffeeShopDiv = document.getElementById("coffeeShopDiv")
 var countCoffeeShopAudio = 0
 
 function playPauseCoffeeShopAudio (){
+  forestAudio.pause()
+  rainAudio.pause()
+  firePlaceAudio.pause()
+
   if (countCoffeeShopAudio == 0) {
     countCoffeeShopAudio = 1
     coffeeShopAudio.play()
@@ -48,6 +60,10 @@ var firePlaceDiv = document.getElementById("firePlaceDiv")
 var countFirePlaceAudio = 0
 
 function playPauseFirePlaceAudio (){
+  forestAudio.pause()
+  rainAudio.pause()
+  coffeeShopAudio.pause()
+
   if (countFirePlaceAudio == 0) {
     countFirePlaceAudio = 1
     firePlaceAudio.play()
@@ -98,7 +114,7 @@ function mouseOutForestSVG() {
 
 function clickForestSVG() {
   document.getElementById("forest-svg").style.transform = "scale(1.1)"
-  document.getElementById("forest-svg").style.transition =".2s"
+  document.getElementById("forest-svg").style.transition =".4s"
 
   var ShowFirePlaceAudioControls = document.getElementById('firePlaceAudio');
   firePlaceAudio.controls = false;
@@ -135,7 +151,7 @@ function mouseOutRainSVG() {
 
 function clickRainSVG() {
   document.getElementById("rain-svg").style.transform = "scale(1.1)"
-  document.getElementById("rain-svg").style.transition =".2s"
+  document.getElementById("rain-svg").style.transition =".4s"
 
   var ShowForestAudioControls = document.getElementById('forestAudio');
   forestAudio.controls = false;
@@ -172,7 +188,7 @@ function mouseOutCoffeeShopSVG() {
 
 function clickCoffeeShopSVG() {
   document.getElementById("coffeeShop-svg").style.transform = "scale(1.1)"
-  document.getElementById("coffeeShop-svg").style.transition =".2s"
+  document.getElementById("coffeeShop-svg").style.transition =".4s"
 
   var ShowForestAudioControls = document.getElementById('forestAudio');
   forestAudio.controls = false;
@@ -209,7 +225,7 @@ function mouseOutFirePlaceSVG() {
 
 function clickFirePlaceSVG() {
   document.getElementById("firePlace-svg").style.transform = "scale(1.1)"
-  document.getElementById("firePlace-svg").style.transition =".2s"
+  document.getElementById("firePlace-svg").style.transition =".4s"
 
   var ShowForestAudioControls = document.getElementById('forestAudio');
   forestAudio.controls = false;
