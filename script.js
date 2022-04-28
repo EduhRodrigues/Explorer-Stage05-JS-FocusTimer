@@ -249,19 +249,28 @@ function timerCountUp() {
       secondsDisplay.textContent = -1
       minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
     }
+
+    if (minut >= 59) {
+      minutesDisplay.textContent = -1
+      minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
+    }
     
     secondsDisplay.textContent =  String (++secondsDisplay.textContent).padStart(2, "0")
+
     timerCountUp()
+    
   }, 1000)
 
 }
-function mouseClickPlaySVG() {
-  timerCountUp()
+function mouseClickPauseSVG() {
+  minutesDisplay.textContent = String (minutesDisplay.textContent).padStart(2, "0")
+  secondsDisplay.textContent = String (secondsDisplay.textContent).padStart(2, "0")
+  setTimeout()
+  return
 }
 
-function mouseClickPauseSVG() {
-  minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
-  secondsDisplay.textContent = String (++secondsDisplay.textContent).padStart(2, "0")
+function mouseClickPlaySVG() {
+  timerCountUp()
 }
 
 function mouseClickForwardSVG() {
