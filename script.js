@@ -70,7 +70,7 @@ document.getElementById("rainPath").style.fill= "grey"
 document.getElementById("rain-svg").style.backgroundColor = "#ff9d00"
 document.getElementById("coffeeShopPath").style.fill= "#523200"
 document.getElementById("coffeeShop-svg").style.backgroundColor = "#9e6100"
-document.getElementById("firePlacePath").style.fill= "#a60505"
+document.getElementById("firePlacePath").style.fill= "yellow"
 document.getElementById("firePlace-svg").style.backgroundColor = "#ff0808"
 
 // Sound Option - Forest //
@@ -201,7 +201,7 @@ function mouseOverFirePlaceSVG() {
 }
 
 function mouseOutFirePlaceSVG() {
-  document.getElementById("firePlacePath").style.fill= "#a60505"
+  document.getElementById("firePlacePath").style.fill= "yellow"
   document.getElementById("firePlace-svg").style.backgroundColor = "#ff0808"
   document.getElementById("firePlace-svg").style.transform = "scale(1)"
   document.getElementById("firePlace-svg").style.transition =".4s"
