@@ -237,25 +237,14 @@ function clickFirePlaceSVG() {
   firePlaceAudio.controls = true;
 }
 
-// #timer Set //
+// Timer Set //
 const minutesDisplay = document.getElementById("min")
 const secondsDisplay= document.getElementById("sec")
 
 minutesDisplay.textContent = '00'
 secondsDisplay.textContent = '00'
 
-// Controller - Play //
-document.getElementById("play-svg").addEventListener("mouseover", mouseOverPlaySVG)
-document.getElementById("play-svg").addEventListener("mouseout", mouseOutPlaySVG)
-
-document.getElementById("playPath").addEventListener("mouseover", mouseOverPlaySVG)
-document.getElementById("playPath").addEventListener("mouseout", mouseOutPlaySVG)
-
-document.getElementById("play-svg").addEventListener("click", mouseClickPlaySVG)
-document.getElementById("forward-svg").addEventListener("click", mouseClickForwardSVG)
-document.getElementById("back-svg").addEventListener("click", mouseClickBackSVG)
-document.getElementById("pause-svg").addEventListener("click", mouseClickPauseSVG)
-
+// Timerout Function //
 let pauseTimerCountUp
 function timerCountUp() {
   pauseTimerCountUp = setTimeout (function () {
@@ -277,30 +266,17 @@ function timerCountUp() {
     timerCountUp()
     
   }, 1000)
-
-}
-function mouseClickPauseSVG() {
-  minutesDisplay.textContent = String (minutesDisplay.textContent).padStart(2, "0")
-  secondsDisplay.textContent = String (secondsDisplay.textContent).padStart(2, "0")
-  clearTimeout(pauseTimerCountUp)
 }
 
-function mouseClickPlaySVG() {
-  timerCountUp()
-}
+// Play Control //
+document.getElementById("playPath").addEventListener("mouseover", mouseOverPlaySVG)
+document.getElementById("playPath").addEventListener("mouseout", mouseOutPlaySVG)
 
-function mouseClickForwardSVG() {
-  minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
-}
+document.getElementById("play-svg").addEventListener("mouseover", mouseOverPlaySVG)
+document.getElementById("play-svg").addEventListener("mouseout", mouseOutPlaySVG)
+document.getElementById("play-svg").addEventListener("click", mouseClickPlaySVG)
 
-function mouseClickBackSVG() {
-  minutesDisplay.textContent = String (--minutesDisplay.textContent).padStart(2, "0")
-
-  if (minutesDisplay.textContent <=-1){
-    minutesDisplay.textContent = "00"
-  }
-}
-
+// Play Control Funtions //
 function mouseOverPlaySVG() {
   document.getElementById("play-svg").style.fill= "#7CFC00"
   document.getElementById("playPath").style.fill= "green"
@@ -311,30 +287,44 @@ function mouseOutPlaySVG() {
   document.getElementById("playPath").style.fill= "#993399"
 }
 
-// Controller - Pause //
-document.getElementById("pause-svg").addEventListener("mouseover", mouseOverPauseSVG)
-document.getElementById("pause-svg").addEventListener("mouseout", mouseOutPauseSVG)
+function mouseClickPlaySVG() {
+  timerCountUp()
+}
 
-document.getElementById("pausePath").addEventListener("mouseover", mouseOverPauseSVG)
-document.getElementById("pausePath").addEventListener("mouseout", mouseOutPauseSVG)
+// Stop Control //
+document.getElementById("pausePath").addEventListener("mouseover", mouseOverStopSVG)
+document.getElementById("pausePath").addEventListener("mouseout", mouseOutStopSVG)
 
-function mouseOverPauseSVG() {
+document.getElementById("pause-svg").addEventListener("mouseover", mouseOverStopSVG)
+document.getElementById("pause-svg").addEventListener("mouseout", mouseOutStopSVG)
+document.getElementById("pause-svg").addEventListener("click", mouseClickStopSVG)
+
+// Stop Control Funtions //
+function mouseOverStopSVG() {
   document.getElementById("pause-svg").style.fill= "hsl(193.9,97.5%,31.2%)"
   document.getElementById("pausePath").style.fill= "red"
 }
 
-function mouseOutPauseSVG() {
+function mouseOutStopSVG() {
   document.getElementById("pause-svg").style.fill = "hsl(240,9.1%,89.2%)"
   document.getElementById("pausePath").style.fill= "#993399"
 }
 
-// Controller - Forward //
-document.getElementById("forward-svg").addEventListener("mouseover", mouseOverForwardSVG)
-document.getElementById("forward-svg").addEventListener("mouseout", mouseOutForwardSVG)
+function mouseClickStopSVG() {
+  minutesDisplay.textContent = String (minutesDisplay.textContent).padStart(2, "0")
+  secondsDisplay.textContent = String (secondsDisplay.textContent).padStart(2, "0")
+  clearTimeout(pauseTimerCountUp)
+}
 
+// Forward Control //
 document.getElementById("forwardPath").addEventListener("mouseover", mouseOverForwardSVG)
 document.getElementById("forwardPath").addEventListener("mouseout", mouseOutForwardSVG)
 
+document.getElementById("forward-svg").addEventListener("mouseover", mouseOverForwardSVG)
+document.getElementById("forward-svg").addEventListener("mouseout", mouseOutForwardSVG)
+document.getElementById("forward-svg").addEventListener("click", mouseClickForwardSVG)
+
+// Forward Control Funtions //
 function mouseOverForwardSVG() {
   document.getElementById("forward-svg").style.fill= "hsl(193.9,97.5%,31.2%)"
   document.getElementById("forwardPath").style.fill= "brown"
@@ -345,13 +335,19 @@ function mouseOutForwardSVG() {
   document.getElementById("forwardPath").style.fill= "#993399"
 }
 
-// Controller - Back //
+function mouseClickForwardSVG() {
+  minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
+}
+
+// Back Control //
 document.getElementById("back-svg").addEventListener("mouseover", mouseOverBackSVG)
 document.getElementById("back-svg").addEventListener("mouseout", mouseOutBackSVG);
 
 document.getElementById("backPath").addEventListener("mouseover", mouseOverBackSVG)
 document.getElementById("backPath").addEventListener("mouseout", mouseOutBackSVG)
+document.getElementById("back-svg").addEventListener("click", mouseClickBackSVG)
 
+// Back Control Functins //
 function mouseOverBackSVG() {
   document.getElementById("back-svg").style.fill= "hsl(193.9,97.5%,31.2%)"
   document.getElementById("backPath").style.fill= "#ff9d00"
@@ -360,4 +356,12 @@ function mouseOverBackSVG() {
 function mouseOutBackSVG() {
   document.getElementById("back-svg").style.fill = "hsl(240,9.1%,89.2%)"
   document.getElementById("backPath").style.fill= "#993399"
+}
+
+function mouseClickBackSVG() {
+  minutesDisplay.textContent = String (--minutesDisplay.textContent).padStart(2, "0")
+
+  if (minutesDisplay.textContent <=-1){
+    minutesDisplay.textContent = "00"
+  }
 }
