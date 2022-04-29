@@ -73,12 +73,6 @@ function playPauseFirePlaceAudio (){
   }
 }
 
-// #controls Fill Colors//
-document.getElementById("playPath").style.fill= "#993399"
-document.getElementById("pausePath").style.fill= "#993399"
-document.getElementById("forwardPath").style.fill= "#993399"
-document.getElementById("backPath").style.fill= "#993399"
-
 // Sound Options Background and Fill Colors//
 document.getElementById("forestPath").style.fill= "green"
 document.getElementById("forest-svg").style.backgroundColor = "#7CFC00"
@@ -268,6 +262,13 @@ function timerCountUp() {
   }, 1000)
 }
 
+// #controls Fill Colors//
+document.getElementById("playPath").style.fill= "#993399"
+document.getElementById("pausePath").style.fill= "#993399"
+document.getElementById("stopPath").style.fill= "#993399"
+document.getElementById("forwardPath").style.fill= "#993399"
+document.getElementById("backPath").style.fill= "#993399"
+
 // Play Control //
 document.getElementById("playPath").addEventListener("mouseover", mouseOverPlaySVG)
 document.getElementById("playPath").addEventListener("mouseout", mouseOutPlaySVG)
@@ -288,31 +289,69 @@ function mouseOutPlaySVG() {
 }
 
 function mouseClickPlaySVG() {
+
   timerCountUp()
+ 
+  let playHide = document.querySelector('.play')
+  playHide.classList.add('hide')
+
+  document.querySelector('.pause')
+  .classList.remove('hide')
 }
 
-// Stop Control //
-document.getElementById("pausePath").addEventListener("mouseover", mouseOverStopSVG)
-document.getElementById("pausePath").addEventListener("mouseout", mouseOutStopSVG)
+// Pause Control //
+document.getElementById("pausePath").addEventListener("mouseover", mouseOverPauseSVG)
+document.getElementById("pausePath").addEventListener("mouseout", mouseOutPauseSVG)
 
-document.getElementById("pause-svg").addEventListener("mouseover", mouseOverStopSVG)
-document.getElementById("pause-svg").addEventListener("mouseout", mouseOutStopSVG)
-document.getElementById("pause-svg").addEventListener("click", mouseClickStopSVG)
+document.getElementById("pause-svg").addEventListener("mouseover", mouseOverPauseSVG)
+document.getElementById("pause-svg").addEventListener("mouseout", mouseOutPauseSVG)
+document.getElementById("pause-svg").addEventListener("click", mouseClickPauseSVG)
 
-// Stop Control Funtions //
-function mouseOverStopSVG() {
+// Pause Control Funtions //
+function mouseOverPauseSVG() {
   document.getElementById("pause-svg").style.fill= "hsl(193.9,97.5%,31.2%)"
-  document.getElementById("pausePath").style.fill= "red"
+  document.getElementById("pausePath").style.fill= "yellow"
 }
 
-function mouseOutStopSVG() {
+function mouseOutPauseSVG() {
   document.getElementById("pause-svg").style.fill = "hsl(240,9.1%,89.2%)"
   document.getElementById("pausePath").style.fill= "#993399"
 }
 
-function mouseClickStopSVG() {
+function mouseClickPauseSVG() {
   minutesDisplay.textContent = String (minutesDisplay.textContent).padStart(2, "0")
   secondsDisplay.textContent = String (secondsDisplay.textContent).padStart(2, "0")
+  clearTimeout(pauseTimerCountUp)
+
+  let playShow = document.querySelector('.play')
+  playShow.classList.remove('hide')
+
+  document.querySelector('.pause')
+  .classList.add('hide')
+}
+
+// Stop Control //
+document.getElementById("stopPath").addEventListener("mouseover", mouseOverStopSVG)
+document.getElementById("stopPath").addEventListener("mouseout", mouseOutStopSVG)
+
+document.getElementById("stop-svg").addEventListener("mouseover", mouseOverStopSVG)
+document.getElementById("stop-svg").addEventListener("mouseout", mouseOutStopSVG)
+document.getElementById("stop-svg").addEventListener("click", mouseClickStopSVG)
+
+// Stop Control Funtions //
+function mouseOverStopSVG() {
+  document.getElementById("stop-svg").style.fill= "hsl(193.9,97.5%,31.2%)"
+  document.getElementById("stopPath").style.fill= "red"
+}
+
+function mouseOutStopSVG() {
+  document.getElementById("stop-svg").style.fill = "hsl(240,9.1%,89.2%)"
+  document.getElementById("stopPath").style.fill= "#993399"
+}
+
+function mouseClickStopSVG() {
+  minutesDisplay.textContent = "00"
+  secondsDisplay.textContent = "00"
   clearTimeout(pauseTimerCountUp)
 }
 
