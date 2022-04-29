@@ -235,16 +235,45 @@ function clickFirePlaceSVG() {
 const minutesDisplay = document.getElementById("min")
 const secondsDisplay= document.getElementById("sec")
 
-minutesDisplay.textContent = '00'
-secondsDisplay.textContent = '00'
+// Timer Reverse //
+  document.querySelector(".reverseTimerButton").addEventListener("click", mouseClickReverseTimerSVG)
 
-// Timerout Function //
-let pauseTimerCountUp
-function timerCountUp() {
-  pauseTimerCountUp = setTimeout (function () {
+  function mouseClickReverseTimerSVG() {
+    let userSettedTime = prompt ("Quantos minutos terá esta prática?")
+    minutesDisplay.textContent = String (userSettedTime).padStart(2, "0")
+
+  function timerCountDown() {
+   setTimeout (function () {
     let second = Number (secondsDisplay.textContent)
     let minut = Number (minutesDisplay.textContent)
 
+    if (second >= 59) {
+      secondsDisplay.textContent = -1
+      minutesDisplay.textContent = String (--minutesDisplay.textContent).padStart(2, "0")
+    }
+
+    if (minut >= 59) {
+      minutesDisplay.textContent = -1
+      minutesDisplay.textContent = String (--minutesDisplay.textContent).padStart(2, "0")
+    }
+    
+    secondsDisplay.textContent =  String (--secondsDisplay.textContent).padStart(2, "0")
+   
+    timerCountDown()
+    
+  }, 1000)
+}}
+ 
+// Timer Count Up Function //
+minutesDisplay.textContent = '00'
+secondsDisplay.textContent = '00'
+
+let pauseTimerCountUp
+function timerCountUp() {
+  pauseTimerCountUp = setTimeout (function () {
+    let minut = Number (minutesDisplay.textContent)
+    let second = Number (secondsDisplay.textContent)
+    
     if (second >= 59) {
       secondsDisplay.textContent = -1
       minutesDisplay.textContent = String (++minutesDisplay.textContent).padStart(2, "0")
@@ -352,7 +381,14 @@ function mouseOutStopSVG() {
 function mouseClickStopSVG() {
   minutesDisplay.textContent = "00"
   secondsDisplay.textContent = "00"
+
   clearTimeout(pauseTimerCountUp)
+
+  playShow = document.querySelector('.play')
+  playShow.classList.remove('pauseHideButton')
+
+  document.querySelector('.pause')
+  .classList.add('pauseHideButton')
 }
 
 // Forward Control //
