@@ -293,10 +293,10 @@ function mouseClickPlaySVG() {
   timerCountUp()
  
   let playHide = document.querySelector('.play')
-  playHide.classList.add('hide')
+  playHide.classList.add('pauseHideButton')
 
   document.querySelector('.pause')
-  .classList.remove('hide')
+  .classList.remove('pauseHideButton')
 }
 
 // Pause Control //
@@ -324,10 +324,10 @@ function mouseClickPauseSVG() {
   clearTimeout(pauseTimerCountUp)
 
   let playShow = document.querySelector('.play')
-  playShow.classList.remove('hide')
+  playShow.classList.remove('pauseHideButton')
 
   document.querySelector('.pause')
-  .classList.add('hide')
+  .classList.add('pauseHideButton')
 }
 
 // Stop Control //
